@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="say"></div>
+    <script type="module"> //type="module" 을 써야 모듈로 가져올 수 있다.
+        // import { 경로 안에 있는 함수 쓰기 } from "경로 쓰기";
+        import {sayHi} from "./sayHi.js";
+        document.body.innerHTML=sayHi('망고');
+        // document.querySelector("#say").innerHTML=sayHi('<p>똥꼬</p>');
+    </script>
+    <script type="module">
+        import { funcA, funcB, varC } from "./main.js";
+            funcA();
+            funcB(varC);
+    </script>
+    <script>
+        import { products } from "./map.js";
+    </script>
+</body>
+</html>
