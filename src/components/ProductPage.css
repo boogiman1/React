@@ -1,0 +1,21 @@
+button{display: block; margin: 20px auto;}
+
+#image-box{width: 1200px; margin: auto;}
+
+#image-box img{width: 40%; height: 40%; display: block; margin: auto;}
+
+#porfile-box{padding: 40px 700px; width: 1200px; margin: auto;}
+
+#porfile-box img{width: 40px;}
+
+#porfile-box .product-seller{display: inline; font-weight: bold;}
+
+#content-box{padding: 0 700px; width: 1200px; margin: auto;}
+
+#name{font-size: 28px;}
+
+#price{font-weight: bold; margin-bottom: 20px; padding: 8px ;}
+
+#price::after{content: '2022/09/30'; display: block; font-weight: 400; color: lightgray; padding-top: 8px;}
+
+#description{padding: 20px 0;}
