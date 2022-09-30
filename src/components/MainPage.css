@@ -15,3 +15,7 @@
 .product-price{font-size: 16px; font-weight: 600; margin-top: 4px;}
 .product-seller{display: flex; align-items: center; margin-top: 12px;}
 .product-avatar{width: 24px;}
+
+/* Link css */
+.product-link{color: #333; text-decoration: none;}
+/*  */
