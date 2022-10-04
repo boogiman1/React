@@ -1,4 +1,12 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
+// antd 임폴트
+import { Button} from 'antd';
+// 기본 antd css 아래 링크 하면 알아서 디자인 됨
+import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+// antd 아이콘 임폴트 하기
+// import { 사용하고 싶은 아이콘 컴포넌트 작성 } from "@ant-design/icons";
+import { UploadOutlined } from "@ant-design/icons";
+// 
 import { Link } from "react-router-dom";
 import Mainpage from "./components/MainPage";
 import ProductPage from "./components/ProductPage";
@@ -6,15 +14,17 @@ import UploadPage from "./components/UploadPage";
 // App.css연결
 import "./App.css";
 const App = () => {
+   let navigate=useNavigate();
    return (
       <>
-         <Link to={"/"}>
-            <div id="header">
-               <div id="header-area">
+         <div id="header">
+            <div id="header-area">
+               <Link to={"/"}>
                   <img src="../images/icons/logo.png" alt="logo" />
-               </div>
+               </Link>
+               <Button size={"large"} icon={<UploadOutlined />} onClick={()=>{navigate("/upload")}}>상품업로드</Button>
             </div>
-         </Link>
+         </div>
          <Routes>
             <Route path="/" element={<Mainpage />}></Route>
             <Route path="/upload" element={<UploadPage />}></Route>

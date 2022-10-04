@@ -4,13 +4,13 @@ button{display: block; margin: 20px auto;}
 
 #image-box img{width: 40%; height: 40%; display: block; margin: auto;}
 
-#porfile-box{padding: 40px 700px; width: 1200px; margin: auto;}
+#porfile-box{padding: 40px 700px;}
 
 #porfile-box img{width: 40px;}
 
 #porfile-box .product-seller{display: inline; font-weight: bold;}
 
-#content-box{padding: 0 700px; width: 1200px; margin: auto;}
+#content-box{padding: 0 700px;}
 
 #name{font-size: 28px;}
 
