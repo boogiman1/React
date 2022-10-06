@@ -7,10 +7,11 @@ const ProductPage = ()=>{
     let [product, setProduct] = useState(null);
     let navi=useNavigate();
     useEffect(()=>{
-        axios.get(`https://3c247217-7784-4082-a3a1-3469982f2385.mock.pstmn.io/products/${id}`)
+        axios.get(`http://localhost:8080/products/${id}`)
         .then((res) => {
-            product=res.data;
+            product=res.data.product;
             setProduct(product)
+            // console.log(res);
         })
         .catch((err) => {
             return console.log(err);
