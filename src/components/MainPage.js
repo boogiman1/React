@@ -63,7 +63,7 @@ const Mainpage = () => {
                         /* console.log(product, idx); */
                         return (
                             <div className="product-card" key={idx}>
-                                <Link className="product-link" to={`/product/${product.id}`}>
+                                <Link className="product-link" to={`$/product/${product.id}`}>
                                     <div>
                                         <img className="product-img" src={`${API_URL}/${product.imageUrl}`} alt={product.name} />
                                     </div>
