@@ -2,12 +2,13 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios"
 import "../components/ProductPage.css"
+import { API_URL } from "../config/constants";
 const ProductPage = ()=>{
     const {id}=useParams();
     let [product, setProduct] = useState(null);
     let navi=useNavigate();
     useEffect(()=>{
-        axios.get(`http://localhost:8080/products/${id}`)
+        axios.get(`${API_URL}/products/${id}`)
         .then((res) => {
             product=res.data.product;
             setProduct(product)
@@ -26,12 +27,12 @@ const ProductPage = ()=>{
     <>
         <button onClick={()=>navi(-1)}>back</button>
         <div id="image-box">
-            <img src={`/${product.imageUrl}`} alt={product.name} />
+            <img src={`${API_URL}/${product.imageUrl}`} alt={`${API_URL}/${product.name}`} />
             {/* 위에 null 때문에 이미지가 안나와서 if(product===null을 작성한다) */}
         </div>
         <div id="porfile-box">
             <img src="/images/icons/avatar.png" alt={product.seller} />
-            <span className="product-seller">{product.seller}</span>
+            <span className="product-seller">{`${API_URL}/${product.seller}`}</span>
         </div>
         <div id="content-box">
             <div id="name">{product.name}</div>
