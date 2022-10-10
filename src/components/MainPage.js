@@ -8,6 +8,7 @@ import { Carousel } from "antd";
 dayjs.extend(relativeTime);
 const Mainpage = () => {
     let [products, setProducts] = React.useState([]);
+    let [products2, setProducts2] = React.useState([]);
     let [banners, setBanners] = React.useState([]);
     // React.useState([]); 는 컴포넌트 내 애들을 읽어준다. useState()라는 함수는 값을 2개를 반환 하는데 초기 값, 콜백함수(변경 된 초기값)
     // let [products, setProducts] 는 products는 선택 값, 그리고 setProducts는 콜백 된 후 재 할당 되는 값(변경 된 값)
@@ -21,7 +22,19 @@ const Mainpage = () => {
         .then((res) => {
             products = res.data.product;
             setProducts(products);
-                // console.log(res);
+                console.log(res);
+        })
+        .catch((err) => {
+                return console.log(err);
+        });
+        /**
+         * products2 통신
+         */
+        axios.get(`${API_URL}/products2`)
+        .then((res) => {
+            products2 = res.data.product2;
+            setProducts2(products2);
+                console.log(res);
         })
         .catch((err) => {
                 return console.log(err);
@@ -77,6 +90,33 @@ const Mainpage = () => {
                                                     <span>{product.seller}</span>
                                                 </div>
                                                 <span className="product-date">{[dayjs(product.createdAt).fromNow()]}</span>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </section>
+                <section className="section">
+                    <h2>Weekly Best</h2>
+                    <div id="product-list2">
+                        {products2.map((products2, idx) => {
+                            return (
+                                <div className="product-card" key={idx}>
+                                    <Link className="product-link" to={`$/product/${products2.id}`}>
+                                        <div>
+                                            <img className="product-img" src={`${API_URL}/${products2.imageUrl2}`} alt={products2.name2} />
+                                        </div>
+                                        <div className="product-content">
+                                            <span className="product-name">{products2.name2}</span>
+                                            <span className="product-price">{products2.price2}원</span>
+                                            <div className="product-footer">
+                                                <div className="product-seller">
+                                                    <img className="product-avatar" src="images/icons/avatar.png" alt="" />
+                                                    <span>{products2.seller2}</span>
+                                                </div>
+                                                <span className="product-date">{[dayjs(products2.createdAt).fromNow()]}</span>
                                             </div>
                                         </div>
                                     </Link>
