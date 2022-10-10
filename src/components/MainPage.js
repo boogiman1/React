@@ -57,32 +57,34 @@ const Mainpage = () => {
                         )
                     })}
                 </Carousel>
-                <h2>Products</h2>
-                <div id="product-list">
-                    {products.map((product, idx) => {
-                        /* console.log(product, idx); */
-                        return (
-                            <div className="product-card" key={idx}>
-                                <Link className="product-link" to={`$/product/${product.id}`}>
-                                    <div>
-                                        <img className="product-img" src={`${API_URL}/${product.imageUrl}`} alt={product.name} />
-                                    </div>
-                                    <div className="product-content">
-                                        <span className="product-name">{product.name}</span>
-                                        <span className="product-price">{product.price}원</span>
-                                        <div className="product-footer">
-                                            <div className="product-seller">
-                                                <img className="product-avatar" src="images/icons/avatar.png" alt="" />
-                                                <span>{product.seller}</span>
-                                            </div>
-                                            <span className="product-date">{[dayjs(product.createdAt).fromNow()]}</span>
+                <section className="section">
+                    <h2>What's NEW</h2>
+                    <div id="product-list">
+                        {products.map((product, idx) => {
+                            /* console.log(product, idx); */
+                            return (
+                                <div className="product-card" key={idx}>
+                                    <Link className="product-link" to={`$/product/${product.id}`}>
+                                        <div>
+                                            <img className="product-img" src={`${API_URL}/${product.imageUrl}`} alt={product.name} />
                                         </div>
-                                    </div>
-                                </Link>
-                            </div>
-                        );
-                    })}
-                </div>
+                                        <div className="product-content">
+                                            <span className="product-name">{product.name}</span>
+                                            <span className="product-price">{product.price}원</span>
+                                            <div className="product-footer">
+                                                <div className="product-seller">
+                                                    <img className="product-avatar" src="images/icons/avatar.png" alt="" />
+                                                    <span>{product.seller}</span>
+                                                </div>
+                                                <span className="product-date">{[dayjs(product.createdAt).fromNow()]}</span>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </section>
             </div>
         </>
     )
