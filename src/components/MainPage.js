@@ -86,7 +86,6 @@ const Mainpage = () => {
                                             <span className="product-price">{product.price}원</span>
                                             <div className="product-footer">
                                                 <div className="product-seller">
-                                                    <img className="product-avatar" src="images/icons/avatar.png" alt="" />
                                                     <span>{product.seller}</span>
                                                 </div>
                                                 <span className="product-date">{[dayjs(product.createdAt).fromNow()]}</span>
@@ -113,7 +112,6 @@ const Mainpage = () => {
                                             <span className="product-price">{products2.price2}원</span>
                                             <div className="product-footer">
                                                 <div className="product-seller">
-                                                    <img className="product-avatar" src="images/icons/avatar.png" alt="" />
                                                     <span>{products2.seller2}</span>
                                                 </div>
                                                 <span className="product-date">{[dayjs(products2.createdAt).fromNow()]}</span>
