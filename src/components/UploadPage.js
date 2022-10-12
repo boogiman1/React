@@ -40,7 +40,7 @@ const UploadPage = () => {
 		<div id="body">
 			<div id="load-container">
 				<Form name="uploadForm" onFinish={onSubmit}>
-					<Form.Item name="upload" label={<div className="upload-label">상품 사진</div>}>
+					<Form.Item name="upload" label={<div className="upload-label">상품 사진</div>} valuePropName="fileList">
 						<Upload name="image" action={`${API_URL}/image`} listType="picture" showUploadList={false} onChange={onChageImage}>
 							{imageUrl ? (
 								<img id="upload-img" src={`${API_URL}/${imageUrl}`} />
@@ -61,8 +61,8 @@ const UploadPage = () => {
 						<Input className="upload-name" size="large" placeholder="상품명을 입력해주세요" />
 					</Form.Item>
 					<Divider />
-					<Form.Item label={<div className="upload-label">판매가</div>} rules={[{ required: true, message: "판매가를 입력해주세요" }]} name="price">
-						<InputNumber className="upload-price" size="large" min={0} defaultValue={0} />
+					<Form.Item label={<div className="upload-label">판매가</div>} rules={[{ required: true, message: "판매가를 입력해주세요" }]} name="price" initialValue={0}>
+						<InputNumber className="upload-price" size="large" min={0} />
 					</Form.Item>
 					<Divider />
 					<Form.Item label={<div className="upload-label">상품설명</div>} rules={[{ required: true, message: "상품설명을 입력해주세요" }]} name="description">

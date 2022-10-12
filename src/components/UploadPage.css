@@ -10,4 +10,6 @@
 
 #product-description{height:160px;}
 
-#submit-button{margin-top:20px; border:none; float:right; background:rgb(75, 130, 211); color:white;}
+#submit-button{margin-top:20px; border:none; float:right; background:rgb(75, 130, 211);}
+
+#submit-button span{color:white;}

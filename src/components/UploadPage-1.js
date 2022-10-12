@@ -1,6 +1,6 @@
 import { API_URL } from "../config/constants";
 import { useState } from "react";
-import { axios } from "axios";
+import  axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Form, Divider, InputNumber, Button, Upload, Input, message } from "antd";
 import "./UploadPage.css";
