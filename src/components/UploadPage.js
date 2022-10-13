@@ -40,7 +40,7 @@ const UploadPage = () => {
 		<div id="body">
 			<div id="load-container">
 				<Form name="uploadForm" onFinish={onSubmit}>
-					<Form.Item name="upload" label={<div className="upload-label">상품 사진</div>} valuePropName="fileList">
+					<Form.Item name="upload" label={<div className="upload-label">상품 사진</div>}>
 						<Upload name="image" action={`${API_URL}/image`} listType="picture" showUploadList={false} onChange={onChageImage}>
 							{imageUrl ? (
 								<img id="upload-img" src={`${API_URL}/${imageUrl}`} />
